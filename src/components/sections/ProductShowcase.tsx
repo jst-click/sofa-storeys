@@ -5,25 +5,21 @@ import { fadeInUp, revealViewport, staggerContainer } from '../../lib/motion'
 const products = [
   {
     name: 'Valentina Three-Seater',
-    price: '$2,849',
     image:
       'https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=900&q=82',
   },
   {
     name: 'Urban Lounge Sectional',
-    price: '$4,120',
     image:
       'https://images.unsplash.com/photo-1617104551722-3b2d51366400?auto=format&fit=crop&w=900&q=82',
   },
   {
     name: 'Classic Comfort Loveseat',
-    price: '$1,980',
     image:
       'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=900&q=82',
   },
   {
     name: 'Heritage Leather Sofa',
-    price: '$3,560',
     image:
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=82',
   },
@@ -78,14 +74,6 @@ export function ProductShowcase() {
                 <h3 className="font-display text-base font-semibold leading-snug text-brand-espresso">
                   {p.name}
                 </h3>
-                <div className="mt-1.5 flex items-baseline justify-between gap-3">
-                  <span className="font-sans text-[10px] font-medium uppercase tracking-[0.2em] text-brand-mocha">
-                    From
-                  </span>
-                  <span className="font-display text-xl font-semibold tabular-nums text-brand-espresso">
-                    {p.price}
-                  </span>
-                </div>
               </div>
             </Card>
           </motion.li>

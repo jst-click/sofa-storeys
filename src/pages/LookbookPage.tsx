@@ -1,78 +1,44 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { CTA } from '../components/sections/CTA'
 import { fadeInUp, revealViewport, staggerContainer } from '../lib/motion'
 
-const galleryItems = [
-  {
-    name: 'Luxury Leather Corner Set',
-    image: '/gallery-1.png',
-  },
-  {
-    name: 'Maroon Custom Sectional',
-    image: '/gallery-2.png',
-  },
-  {
-    name: 'Designer 3+1+1 Sofa Set',
-    image: '/gallery-3.png',
-  },
-  {
-    name: 'Lounge Sectional with Storage',
-    image: '/gallery-4.png',
-  },
-  {
-    name: 'Leather Sofa',
-    image: 'https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Recliner Sofas',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Sofa Renovation',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Couch Repair',
-    image: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Custom Sofa',
-    image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Fabric Sofas',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Couch Upholstery',
-    image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Furniture Repairs',
-    image: 'https://images.unsplash.com/photo-1567538096639-e914c584b9d6?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Sofa Manufacturers',
-    image: 'https://images.unsplash.com/photo-1617098474202-0d0d7f60a854?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Sitting Room',
-    image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Chair Upholstery',
-    image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=82',
-  },
-  {
-    name: 'Customised Sofa',
-    image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=1200&q=82',
-  },
-]
+type GalleryItem = { name: string; image: string }
 
 export function LookbookPage() {
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([])
+
   useEffect(() => {
     document.title = 'Lookbook | Sofa Storys'
+
+    let alive = true
+    fetch('/gallery-manifest.json')
+      .then(async (res) => {
+        if (!res.ok) return []
+        const buffer = await res.arrayBuffer()
+        const parse = (raw: string) => JSON.parse(raw) as GalleryItem[]
+
+        try {
+          return parse(new TextDecoder('utf-8').decode(buffer))
+        } catch {
+          try {
+            return parse(new TextDecoder('utf-16le').decode(buffer))
+          } catch {
+            return []
+          }
+        }
+      })
+      .then((data: GalleryItem[]) => {
+        if (!alive || !Array.isArray(data)) return
+        setGalleryItems(data.filter((item) => item?.image))
+      })
+      .catch(() => {
+        if (alive) setGalleryItems([])
+      })
+
+    return () => {
+      alive = false
+    }
   }, [])
 
   return (
@@ -96,7 +62,7 @@ export function LookbookPage() {
         >
           {galleryItems.map((item) => (
             <motion.li
-              key={item.name}
+              key={item.image}
               variants={fadeInUp}
               className="overflow-hidden rounded-[1.1rem] border border-brand-taupe/25 bg-white/75 shadow-soft"
             >

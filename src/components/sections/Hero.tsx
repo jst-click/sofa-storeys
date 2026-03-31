@@ -10,6 +10,8 @@ const HERO_IMAGE =
 
 export function Hero() {
   const navigate = useNavigate()
+  const whatsappNumber = '919353056099'
+  const callNumber = '+919353056099'
   const sectionRef = useRef<HTMLElement>(null)
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -82,9 +84,18 @@ export function Hero() {
               <Button
                 variant="outline"
                 className="w-full !border-white/45 !bg-white/10 !text-brand-cream !ring-white/20 hover:!bg-white/18 sm:w-auto"
-                onClick={() => navigate(ROUTES.contact)}
+                onClick={() => window.open(`https://wa.me/${whatsappNumber}`, '_blank', 'noopener,noreferrer')}
               >
-                Book a Visit
+                WhatsApp
+              </Button>
+              <Button
+                variant="outline"
+                className="w-full !border-white/45 !bg-white/10 !text-brand-cream !ring-white/20 hover:!bg-white/18 sm:hidden"
+                onClick={() => {
+                  window.location.href = `tel:${callNumber}`
+                }}
+              >
+                Call +91 93530 56099
               </Button>
             </motion.div>
           </motion.div>
