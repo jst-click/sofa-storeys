@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+
+  --color-brand-cream: #faf7f2;
+  --color-brand-ivory: #f5f0e8;
+  --color-brand-sand: #ebe3d8;
+  --color-brand-taupe: #c9b8a6;
+  --color-brand-mocha: #8b7355;
+  --color-brand-brown: #6b5344;
+  --color-brand-espresso: #3d2a1f;
+  --color-brand-rich: #2a1d16;
+
+  --shadow-soft: 0 2px 32px -8px rgb(42 29 22 / 0.08);
+  --shadow-lift: 0 24px 64px -16px rgb(42 29 22 / 0.14);
+  --shadow-glow: 0 0 0 1px rgb(255 255 255 / 0.5) inset;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply antialiased text-brand-espresso;
+    background-color: var(--color-brand-cream);
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -20%, rgb(235 227 216 / 0.65), transparent 55%),
+      radial-gradient(ellipse 80% 50% at 100% 50%, rgb(245 240 232 / 0.5), transparent 45%),
+      radial-gradient(ellipse 60% 40% at 0% 100%, rgb(232 223 210 / 0.35), transparent 50%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-brand-taupe/40 text-brand-rich;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-mocha;
+  }
+}
