@@ -27,16 +27,16 @@ export const SERVICES: ServiceRecord[] = [
       'Mechanisms, frames, and quiet motion — restored to like-new comfort.',
     metaTitle: 'Recliner Repair | Sofa Storys',
     heroImage:
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=2000&q=85',
-    heroImageAlt: 'Comfortable modern recliner sofa in a warm living space',
+      'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/Sofa_LS/WRCLSGRN1LRDF_LS_1.jpg?tr=w-3840',
+    heroImageAlt: 'Green leather recliner-style sofa in a living room',
     gallery: [
       {
-        src: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=82',
-        alt: 'Detail of sofa upholstery and cushion tailoring',
+        src: 'https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/Sofa_LS/WRCLSGRN1LRDF_LS_1.jpg?tr=w-3840',
+        alt: 'Green leather recliner-style sofa — detail view',
       },
       {
-        src: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=82',
-        alt: 'Bright living room with comfortable seating',
+        src: 'https://images.unsplash.com/photo-1623353283172-2518d7e6f5ab?auto=format&fit=crop&w=1200&q=82',
+        alt: 'Plush grey recliner armchair beside a wall',
       },
     ],
     intro:

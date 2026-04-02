@@ -77,7 +77,9 @@ export function Footer() {
                   Contact page
                 </Link>
               </li>
-              <li className="pt-1 text-brand-brown/80">Bangalore, Karnataka</li>
+              <li className="max-w-xs pt-1 leading-relaxed text-brand-brown/80">
+                7th Main Road, 1st Block, 6th Cross Rd, Venkatapura, Koramangala, Bengaluru, Karnataka 560034
+              </li>
             </ul>
           </div>
           <div>

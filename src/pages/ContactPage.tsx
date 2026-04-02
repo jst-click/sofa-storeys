@@ -46,7 +46,8 @@ export function ContactPage() {
             <li>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-mocha">Location</p>
               <p className="mt-1 max-w-sm leading-relaxed text-brand-brown/90">
-                Bangalore, Karnataka — by appointment for visits and consultations.
+                7th Main Road, 1st Block, 6th Cross Rd, Venkatapura, Koramangala, Bengaluru, Karnataka 560034.
+                Visits and consultations by appointment.
               </p>
             </li>
             <li>
