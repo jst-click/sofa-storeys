@@ -38,13 +38,25 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why" className="mx-auto max-w-[90rem] px-5 pb-4 pt-0 sm:px-8 md:pb-6 lg:px-12" aria-labelledby="why-heading">
+    <section
+      id="why"
+      className="mx-auto max-w-[90rem] px-5 pb-4 pt-0 sm:px-8 md:pb-6 lg:px-12"
+      aria-labelledby="why-heading"
+      aria-describedby="why-lead"
+    >
       <h2
         id="why-heading"
-        className="mb-4 text-center font-display text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.08] tracking-tight text-brand-espresso md:mb-5"
+        className="mb-2 text-center font-display text-[clamp(2rem,4.4vw,3.4rem)] font-semibold leading-[1.08] tracking-tight text-brand-espresso"
       >
-        Why Storys Sofa
+        Why Sofa Storys
       </h2>
+      <p
+        id="why-lead"
+        className="mx-auto mb-4 max-w-2xl text-center font-sans text-sm leading-relaxed text-brand-brown/80 md:mb-5 md:text-base"
+      >
+        Trusted craftsmanship, honest materials, and service built around your home — here is why Sofa Storys is the
+        right partner for repair, renewal, and custom comfort.
+      </p>
       <motion.ul
         variants={staggerContainer}
         initial="hidden"
