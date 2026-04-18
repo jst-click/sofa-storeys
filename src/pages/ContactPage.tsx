@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Section } from '../components/ui/Section'
+import { STORE_ADDRESS } from '../data/contact'
 import { fadeInUp, revealViewport } from '../lib/motion'
 
 export function ContactPage() {
@@ -45,9 +46,9 @@ export function ContactPage() {
             </li>
             <li>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-mocha">Location</p>
-              <p className="mt-1 max-w-sm leading-relaxed text-brand-brown/90">
-                7th Main Road, 1st Block, 6th Cross Rd, Venkatapura, Koramangala, Bengaluru, Karnataka 560034.
-                Visits and consultations by appointment.
+              <p className="mt-1 max-w-sm leading-relaxed text-brand-brown/90">{STORE_ADDRESS}</p>
+              <p className="mt-2 text-sm leading-relaxed text-brand-brown/75">
+                By appointment for visits and consultations.
               </p>
             </li>
             <li>
