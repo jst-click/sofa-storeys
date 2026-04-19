@@ -80,11 +80,11 @@ export function Navbar() {
       >
         <NavLink
           to={ROUTES.home}
-          className="transition-opacity duration-300 hover:opacity-90"
+          className="min-w-0 flex-1 pr-2 transition-opacity duration-300 hover:opacity-90"
           end
         >
-          <span className="inline-flex items-center gap-2 sm:gap-2.5">
-            <span className="relative h-9 w-[68px] overflow-hidden sm:h-11 sm:w-[84px]">
+          <span className="inline-flex min-w-0 items-center gap-1.5 sm:gap-2.5">
+            <span className="relative h-9 w-[68px] shrink-0 overflow-hidden sm:h-11 sm:w-[84px]">
               <img
                 src="/logo-sofa-icon.png"
                 alt=""
@@ -92,7 +92,9 @@ export function Navbar() {
                 className={`absolute left-0 top-0 h-9 w-auto max-w-none object-contain transition-shadow sm:h-11 ${useSolidNav ? 'shadow-none' : 'shadow-[0_6px_20px_rgba(0,0,0,0.35)]'}`}
               />
             </span>
-            <span className={`hidden font-display text-[1.45rem] font-semibold leading-none tracking-[0.01em] sm:block lg:text-[1.9rem] ${useSolidNav ? 'text-brand-espresso' : 'text-brand-cream drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]'}`}>
+            <span
+              className={`min-w-0 whitespace-nowrap font-display text-[1.0625rem] font-semibold leading-none tracking-[0.01em] sm:text-[1.45rem] lg:text-[1.9rem] ${useSolidNav ? 'text-brand-espresso' : 'text-brand-cream drop-shadow-[0_2px_20px_rgba(0,0,0,0.35)]'}`}
+            >
               Sofa Storys
             </span>
           </span>
